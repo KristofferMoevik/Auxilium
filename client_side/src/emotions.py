@@ -147,7 +147,7 @@ def return_focus(average_center_view_last_min, blinksperminute):
 
 
 if mode == "display":
-    model.load_weights('Emotion_detector_V1//src//model.h5')
+    model.load_weights('client_side//src//model.h5')
 
     # prevents openCL usage and unnecessary logging messages
     cv2.ocl.setUseOpenCL(False)
@@ -241,7 +241,7 @@ if mode == "display":
         #cv2.putText(frame, "Right pupil: " + str(right_pupil), (90, 165), cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
         if not ret:
             break
-        facecasc = cv2.CascadeClassifier('Emotion_detector_V1//src//haarcascade_frontalface_default.xml')
+        facecasc = cv2.CascadeClassifier('client_side//src//haarcascade_frontalface_default.xml')
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         faces = facecasc.detectMultiScale(gray,scaleFactor=1.3, minNeighbors=5)
 
